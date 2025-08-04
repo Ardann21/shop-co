@@ -7,9 +7,13 @@ import { IoMdClose } from "react-icons/io";
 import blackT from '../assets/black-tshirt.png'
 import star4 from '../assets/star4.5.png'
 import { FiChevronDown,FiChevronUp, FiChevronLeft} from "react-icons/fi";
+import { Link } from 'react-router-dom';
 const ShopMain = () => {
 
-    const colors = ['#fde047', '#dc2626', '#3b82f6','#00C12B','#F57906','#06CAF5','#7D06F5','#e6e6e6','#000000']; // Example colors
+    const [price, setPrice] = useState(125); 
+
+
+    const colors = ['#fde047', '#dc2626', '#3b82f6','#00C12B','#F57906','#06CAF5','#7D06F5','#e6e6e6','#000000']; 
     const sizes = ['XX-Small', 'X-Small', 'Small', 'Medium', 'Large', 'X-Large', 'XX-Large', '3X-Large', '4X-Large'];
 
      const [selectedSize, setSelectedSize] = useState(null);
@@ -35,8 +39,10 @@ const ShopMain = () => {
         <h1>Casual</h1>
     </div>
 
+    <div className='flex md:hidden ml-2 my-4 text-3xl font-bold'><h1>CASUAL</h1></div>
+
     <div className='flex md:hidden justify-around items-center mb-2'>
-      <div className='flex gap-2 ml-2'><h1>Casual</h1> <p className='text-gray-300'>Showing 1-10 of 100 Products</p></div>
+      <div className='flex gap-2 ml-2'><h1 className='hidden md:flex'>Casual</h1> <p className='text-gray-300'>Showing 1-10 of 100 Products</p></div>
       
       <div onClick={handleSort} className='flex cursor-pointer '>
                        <p >Sort by: Most Popular</p>
@@ -94,19 +100,21 @@ const ShopMain = () => {
                 </div>
             </div>
             <div className='flex flex-col mt-3'>
-                 <div className='flex justify-between items-center'>
-                    <h1 className='text-3xl'>Price</h1>
-                    <FiChevronRight />
-                </div>
-                                
-                <div class="relative mb-6 ">
-                    <label for="labels-range-input" class="sr-only">Labels range</label>
-                    <input id="labels-range-input" type="range" value="200" min="100" max="1500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-300"></input>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">Min ($100)</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">$500</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">$1000</span>
-                    <span class="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">Max ($1500)</span>
-                </div>
+            <div className="p-4 bg-white rounded-lg shadow-md max-w-sm">
+          <h2 className="text-xl font-semibold mb-4">Price: ${price}</h2>
+          <input 
+            type="range"
+            min="50"
+            max="200"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+          />
+          <div className="flex justify-between mt-2 text-gray-500 text-sm">
+            <span>$50</span>
+            <span>$200</span>
+      </div>
+    </div>
 
             </div>
 
@@ -202,7 +210,8 @@ const ShopMain = () => {
               <div className='grid grid-cols-2 md:grid-cols-3 gap-3 p-5'>
 
                   <div className='text-left flex flex-col gap-3'>
-                              <div className=''>
+                    <Link to={'/product'}>
+                    <div className=''>
                                   <img className='rounded-3xl w-82' src={blackT} alt="" />
                               </div>
                               <div>
@@ -212,7 +221,8 @@ const ShopMain = () => {
                                       <p>4/5</p>
                                   </div>
                                   <p className='font-bold text-xl'>$120</p>
-                                </div>
+                                </div></Link>
+                              
                           </div>
 
                     
@@ -369,7 +379,7 @@ const ShopMain = () => {
                  
 
               </div>
-              <div className='border-t border-t-gray-300 md:max-w-[1230px] flex justify-between'>
+              <div className='border-t border-t-gray-300 md:max-w-[1230px] flex justify-between mx-2'>
                 <div className='mt-3'><button className='cursor-pointer border border-gray-300 p-1 md:p-3 rounded-2xl flex items-center'> <FiChevronLeft /> Previous</button></div>
                 <div className=' mt-3 flex gap-1 md:gap-8 text-[10px] md:text-[15px]'>
                   <p className='bg-gray-300 rounded-md p-3'>1</p>

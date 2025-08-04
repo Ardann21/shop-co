@@ -7,6 +7,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
+
+    
+
+
     const [open, setOpen] = useState(true)
     const handleOpen=()=>{
     setOpen(!open)
@@ -57,7 +61,7 @@ const Nav = () => {
                 </div>
             
        
-        <div className='flex gap-3 w-32'>
+        <div className='flex gap-3 md:w-32'>
             <img className='flex md:hidden'  src={search} alt="" />
             <Link to={"/cart"}>
                 <img className='h-5 w-5' src={cart} alt="" />

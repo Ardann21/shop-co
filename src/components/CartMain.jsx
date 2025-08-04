@@ -4,6 +4,7 @@ import trashRed from '../assets/trash-red.png'
 import blackT from '../assets/black-tshirt.png'
 import { FiChevronRight} from "react-icons/fi";
 import { FaPlus,FaMinus } from "react-icons/fa6";
+import { FaTrash } from "react-icons/fa";
 
 const CartMain = () => {
   return (
@@ -20,61 +21,30 @@ const CartMain = () => {
             
         </div>
     <div className='flex flex-col md:flex-row gap-2 max-w-[1240px] md:mx-auto mx-3  '>
-        <div className='flex md:w-2/3 flex-col mx-2 border-3 border-gray-300 rounded-2xl'>
+        <div className='flex md:w-2/3 flex-col mx-2 border-3 h-fit border-gray-300 rounded-2xl'>
             
-            <div className='flex text-left p-2 gap-2 md:mr-5 border-b border-b-gray-300 ml-3'>
+            <div className='flex text-left p-2 gap-2 md:mr-5 ml-3'>
                 <div className='w-1/3 md:flex md:justify-center'> 
                     <img className='rounded-2xl md:h-46 md:w-46' src={blackT} alt="" />
                 </div>
                 <div className='w-2/3 my-auto'>
-                    <div className='flex justify-between md:text-3xl'><h1>Gradient Graphic T-shirt</h1><img className='h-6 w-auto' src={trashRed} alt="" /></div>
+                    <div className='flex justify-between md:text-3xl'><h1>Gradient Graphic T-shirt</h1><FaTrash className='text-red-600 cursor-pointer' size={20}/>
+</div>
                     <div className='flex flex-col'><h1>Size: Large</h1><h1>Color: White</h1></div>
                     <div className='flex justify-between'>
                         <h1>$145</h1>
                         <div className='flex gap-5 px-1 md:px-3 rounded-4xl bg-gray-200 items-center'>
-                            <div><button className=''><FaMinus /></button></div>
+                            <div><button className='cursor-pointer'><FaMinus size={12}/></button></div>
                             <div><button className='md:text-xl font-bold'>1</button></div>
-                            <div><button ><FaPlus /></button></div>
+                            <div><button className='cursor-pointer'><FaPlus size={12}/></button></div>
                         </div>
                         </div>
                 </div>
             </div>
 
-            <div className='flex text-left p-2 gap-2 md:mr-5 border-b ml-3 border-b-gray-300'>
-                <div className='w-1/3 md:flex md:justify-center'>
-                    <img className='rounded-2xl md:h-46 md:w-46' src={blackT} alt="" />
-                </div>
-                <div className='w-2/3 my-auto'>
-                    <div className='flex justify-between md:text-3xl'><h1>Gradient Graphic T-shirt</h1><img className='h-6 w-auto' src={trashRed} alt="" /></div>
-                    <div className='flex flex-col'><h1>Size: Large</h1><h1>Color: White</h1></div>
-                    <div className='flex justify-between'>
-                        <h1>$145</h1>
-                        <div className='flex gap-5 px-1 md:px-3 rounded-4xl bg-gray-200 items-center'>
-                            <div><button className=''><FaMinus /></button></div>
-                            <div><button className='text-xl font-bold'>1</button></div>
-                            <div><button ><FaPlus /></button></div>
-                        </div>
-                        </div>
-                </div>
-            </div>
+            
 
-            <div className='flex text-left p-2 gap-2 md:mr-5 border-b ml-3 border-b-gray-300'>
-                <div className='w-1/3 md:flex md:justify-center'>
-                    <img className='rounded-2xl md:h-46 md:w-46' src={blackT} alt="" />
-                </div>
-                <div className='w-2/3 my-auto'>
-                    <div className='flex justify-between md:text-3xl'><h1>Gradient Graphic T-shirt</h1><img className='h-6 w-auto' src={trashRed} alt="" /></div>
-                    <div className='flex flex-col'><h1>Size: Large</h1><h1>Color: White</h1></div>
-                    <div className='flex justify-between'>
-                        <h1>$145</h1>
-                        <div className='flex gap-5 px-1 md:px-3 rounded-4xl bg-gray-200 items-center'>
-                            <div><button className=''><FaMinus /></button></div>
-                            <div><button className='text-xl font-bold'>1</button></div>
-                            <div><button ><FaPlus /></button></div>
-                        </div>
-                        </div>
-                </div>
-            </div>
+           
 
 
         </div>
