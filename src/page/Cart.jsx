@@ -1,10 +1,10 @@
 import React from 'react'
 import CartMain from '../components/CartMain'
 
-const Cart = () => {
+const Cart = ({cart,removeCart,increaseQuantity,decreaseQuantity}) => {
   return (
     <>
-    <CartMain />
+    <CartMain cart={cart} removeCart={removeCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>
     </>
   )
 }

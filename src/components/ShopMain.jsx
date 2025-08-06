@@ -100,8 +100,7 @@ const ShopMain = () => {
                 </div>
             </div>
             <div className='flex flex-col mt-3'>
-            <div className="p-4 bg-white rounded-lg shadow-md max-w-sm">
-          <h2 className="text-xl font-semibold mb-4">Price: ${price}</h2>
+            <div className=" bg-white rounded-lg shadow-md max-w">
           <input 
             type="range"
             min="50"
@@ -110,8 +109,9 @@ const ShopMain = () => {
             onChange={(e) => setPrice(e.target.value)}
             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
           />
-          <div className="flex justify-between mt-2 text-gray-500 text-sm">
+          <div className="flex justify-between mt-2 text-gray-500 text-sm mx-1">
             <span>$50</span>
+            <h2 className=" font-semibold mb-4">Price: ${price}</h2>
             <span>$200</span>
       </div>
     </div>
