@@ -5,6 +5,7 @@ import zara from '../assets/zara.png'
 import gucci from '../assets/gucci.png'
 import prada from '../assets/prada.png'
 import calv from '../assets/calv.png'
+import { Link } from 'react-router-dom';
 const HomeHero = () => {
   return (
     <>
@@ -15,7 +16,7 @@ const HomeHero = () => {
             <p>Browse through our diverse range of meticulously
             crafted garments, designed to bring out your individuality
             and cater to your sense of style.</p>
-            <button className='bg-black text-white px-4 py-1 rounded-md md:w-fit w-full'>Shop Now</button>
+            <button className='bg-black text-white px-4 py-1 rounded-md md:w-fit w-full'><Link to={'/shop'}>Shop Now</Link></button>
             <div className='flex gap-3 flex-wrap md:flex-nowrap justify-center'>
                 <div className=' p-3'>
                     <h1 className='text-2xl font-bold'>200+</h1>

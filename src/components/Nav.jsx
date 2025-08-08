@@ -80,11 +80,11 @@ const Nav = ({cart}) => {
                 <div className={!nav ? 'fixed left-[-100%] ease-out duration-750' : 'fixed left-0 top-0 bg-white w-[60%] border-r border-r-black h-full ease-in-out duration-500 z-30'}>
                     <ul className=' flex flex-col text-left p-3 gap-3'>
                         <FiX className='flex md:hidden'/>
-                        <li>T-shirts</li>
-                        <li>Shorts</li>
-                        <li>Shirts</li>
-                        <li>Hoodie</li>
-                        <li>Jeans</li>
+                        <li><Link to={'/shop'}>Shop</Link></li>
+                        <li><Link to={'/about'}>About Us</Link></li>
+                        <li><Link to={'/blog'}>Blog</Link></li>
+                        <li><Link to={'/contact'}>Contact Us</Link></li>
+                        
                     </ul>
                 </div>
             </div>
