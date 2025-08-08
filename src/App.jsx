@@ -8,7 +8,9 @@ import Cart from './page/Cart';
 import Product from './page/Product';
 import './App.css';
 import { products } from './components/ProductsData';
-
+import About from './page/About';
+import Blog from './page/Blog'; 
+import Contact from './page/Contact';
 function App() {
 
   const [cart, setCart] = useState([])
@@ -71,9 +73,13 @@ function App() {
       <Nav cart={cart}/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop" element={<Shop products={products}/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart cart={cart} removeCart={removeCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>} />
-        <Route path="/product" element={<Product addToCart={addToCart} products={products}/>} />
+        <Route path="/product/:id" element={<Product addToCart={addToCart} products={products} />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>

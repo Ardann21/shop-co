@@ -1,11 +1,11 @@
 import React from 'react'
 import ShopMain from '../components/ShopMain'
 
-const Shop = () => {
+const Shop = ({products}) => {
 
   return (
     <>
-    <ShopMain />
+    <ShopMain products={products}/>
     </>
 
   )

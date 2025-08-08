@@ -26,19 +26,44 @@ const ProductMain = ({ product, addToCart }) => {
         }
     };
 
+    const [mainImageSrc, setMainImageSrc] = useState(product.mainImage);
+
+    const handleThumbnailClick = (imageSrc) => {
+        setMainImageSrc(imageSrc);
+    };
+
     return (
         <>
             <div className='flex flex-col md:flex-row md:max-w-[1240px] md:mx-auto items-center'>
                 <div className='flex flex-col md:flex-row my-12 gap-2 w-auto'>
                     <div className='hidden md:flex flex-col gap-2 h-auto w-auto'>
-                        <img className='h-fit w-80 rounded-2xl border' src={product.mainImage} alt={product.name} />
-                        <img className='h-fit w-80 rounded-2xl' src={product.mainImage} alt={product.name} />
-                        <img className='h-fit w-80 rounded-2xl' src={product.mainImage} alt={product.name} />
+                         {product.images && product.images.map((image, index) => (
+                            <img
+                                key={index}
+                                className={`h-auto w-80 rounded-2xl cursor-pointer ${mainImageSrc === image ? 'border-2 border-black' : 'border-none'}`}
+                                src={image}
+                                alt=""
+                                onClick={() => handleThumbnailClick(image)}
+                            />
+                        ))}
                     </div>
                     <div className='flex w-auto h-auto'>
-                        <img className='md:w-230 w-auto h-auto rounded-2xl' src={product.mainImage} alt={product.name} />
+                        <img className='md:w-230 w-70 h-70 md:h-auto  rounded-[40px]' src={mainImageSrc} alt={product.name} />
+                    </div>
+                    <div className='flex md:hidden gap-2  h-22 w-22'>
+                         {product.images && product.images.map((image, index) => (
+                            <img
+                                key={index}
+                                className={`h-22 w-80 rounded-2xl cursor-pointer ${mainImageSrc === image ? 'border-2 border-black' : 'border-none'}`}
+                                src={image}
+                                alt=""
+                                onClick={() => handleThumbnailClick(image)}
+                            />
+                        ))}
                     </div>
                 </div>
+
+                
 
                 <div className='flex flex-col text-left mx-2 p-3 gap-2'>
                     <div><h1 className='text-3xl font-bold '>{product.name}</h1></div>
